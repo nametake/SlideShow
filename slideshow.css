@@ -1,57 +1,93 @@
 /*
  * slide show css
  */
+
+/* 
+ * Font
+ */
+@font-face
+{
+font-family: mplus-1p-regular;
+src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
+     format("truetype");
+}
+
+@font-face
+{
+font-family: mplus-1p-bold;
+src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-bold.ttf')
+     format("truetype");
+}
+
+h1 {
+    font-family: 'mplus-1p-bold';
+}
+
+p, ul, li {
+    font-family: 'mplus-1p-regular';
+}
+
+/*
+ * General
+ */
 #slideshow > div {
     position: absolute;
     width: 100%;
     height: 100%;
+    padding: 2%;
     top: 0;
     left: 0;
 }
 
+#url {
+    position: absolute;
+}
+
+#button {
+    position: absolute;
+    bottom: 10px;
+    font-size: 30px;
+}
 
 
+/*
+ * Page
+ */
 /* center */
 .center h1 {
     position: relative;
     text-align: center;
-    font-size: 76px;
-    margin: 80px 0px 50px;
+    font-size: 92px;
+    margin: 160px 0px 50px;
 }
 
 .center p {
     position: relative;
     text-align: center;
-    font-size: 48px;
+    font-size: 60px;
     margin: 30px 0;
 }
 
 /* normal */
 .normal h1 {
     position: relative;
-    font-size: 64px;
-    margin: 40px 0 30px 100px;
+    font-size: 76px;
+    margin: 80px 0 60px 200px;
 }
 
 .normal p {
     position: relative;
     font-size: 48px;
-    margin: 30px 0;
+    margin: 10px 0 10px 140px;
 }
 
 .normal ul {
     position: relative;
     list-style: disc;
-    margin: 0 0 0 80px;
-    font-size: 32px;
+    margin: 10px 0 10px 140px;
+    font-size: 48px;
 }
 
 .normal li {
     margin: 10px 0;
 }
-
-#button {
-    position: absolute;
-    bottom: 10px;
-}
-
