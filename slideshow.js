@@ -14,10 +14,10 @@ var slideshow = slideshow || {};
     slideshow.init = function () {
         $("#slideshow > div ").each(function (i, ele) {
             slideshow.pageDiv.push($(ele));
-            $(ele).css({"left": "100%"});
+            $(ele).css({"left": "100%"}).hide();
 
         });
-        slideshow.pageDiv[slideshow.nowPage].css({"left": "0"});
+        slideshow.pageDiv[slideshow.nowPage].css({"left": "0"}).show();
 
 
         $("#next").on('click',function(){
@@ -32,7 +32,7 @@ var slideshow = slideshow || {};
         slideshow.changeSlide(slideshow.nowPage + 1);
     }
     slideshow.prev = function () {
-        slideshow.changeSlide(slideshow.nowPage - 2);
+        slideshow.changeSlide(slideshow.nowPage - 1);
     }
 
     //
@@ -49,7 +49,7 @@ var slideshow = slideshow || {};
                 slideshow.pageDiv[i].css({"left": "-100%"})
             }
             // 次のスライドの移動
-            slideshow.pageDiv[target].animate(
+            slideshow.pageDiv[target].show().animate(
                 {"left": "0"},
                 {
                     duration: slideshow.easingSpeed,
@@ -61,6 +61,9 @@ var slideshow = slideshow || {};
                 {
                     duration: slideshow.easingSpeed,
                     easing: slideshow.easingType,
+                    complete: function () {
+                        $(this).hide();
+                    }
                 });
 
         // 前のスライドに移動する時(右にスライド)
@@ -70,7 +73,7 @@ var slideshow = slideshow || {};
                 slideshow.pageDiv[i].css({"left": "100%"})
             }
             // 次のスライドの移動
-            slideshow.pageDiv[target].animate(
+            slideshow.pageDiv[target].show().animate(
                 {"left": "0"},
                 {
                     duration: slideshow.easingSpeed,
@@ -82,6 +85,9 @@ var slideshow = slideshow || {};
                 {
                     duration: slideshow.easingSpeed,
                     easing: slideshow.easingType,
+                    complete: function () {
+                        $(this).hide();
+                    }
                 });
         }
         slideshow.nowPage = target;
