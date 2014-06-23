@@ -15,7 +15,6 @@ var slideshow = slideshow || {};
         $("#slideshow > div ").each(function (i, ele) {
             slideshow.pageDiv.push($(ele));
             $(ele).css({"left": "100%"}).hide();
-
         });
         slideshow.pageDiv[slideshow.nowPage].css({"left": "0"}).show();
 
@@ -91,6 +90,6 @@ var slideshow = slideshow || {};
                 });
         }
         slideshow.nowPage = target;
-}
+    }
 
 })();
